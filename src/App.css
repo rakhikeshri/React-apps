@@ -1,0 +1,229 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  overflow: hidden;
+}
+
+body {
+  background-color: #133269;
+}
+
+.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.inner-main {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: scale-up 0.3s ease-in-out;
+  min-width: 320px;
+  max-width: 420px !important;
+  border-radius: 20px;
+}
+
+.heading {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading h1,
+.heading button {
+  font-size: 1.5rem;
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.btns-container {
+  height: 100vh;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.btns-container>div {
+  position: relative;
+}
+
+.btns {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  padding: 20px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  box-shadow: 0.5px 0.5px 5px #d809a4;
+  display: grid;
+  place-items: center;
+  animation: bounce 0.8s linear infinite alternate-reverse;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.btns::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  padding: 20px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e3ffe7 0%, #5b8de2 100%);
+  opacity: 0;
+  /* Initially transparent */
+  transition: opacity 0.5s ease;
+  /* Transition opacity */
+}
+
+.btns:hover::before {
+  opacity: 1;
+}
+
+.btns-container div:nth-child(1) .btns {
+  right: 80px;
+  top: 25px;
+}
+
+.btns-container div:nth-child(2) .btns {
+  right: 70px;
+  top: 25px;
+}
+
+.btns-container div:nth-child(3) .btns {
+  right: 50px;
+  bottom: 20px;
+}
+
+.btns-container div:nth-child(4) .btns {
+  right: 80px;
+  bottom: 0px;
+}
+
+.btns-container div:nth-child(7) .btns,
+.btns-container div:nth-child(5) .btns {
+  bottom: 0px;
+}
+
+.btns-container div:nth-child(6) .btns {
+  bottom: 20px;
+}
+
+.btns-container div:nth-child(10) .btns {
+  right: 80px;
+  top: 25px;
+}
+
+.btns-container div:nth-child(12) .btns {
+  right: 10px;
+  bottom: 0px;
+}
+
+.btns-container div:nth-child(11) .btns {
+  right: 50px;
+  bottom: 30px;
+}
+
+.btns-container div:nth-child(8) .btns {
+  left: 20px;
+  bottom: 20px;
+}
+
+.btns-container div:nth-child(9) .btns {
+  bottom: 28px;
+  right: 20px;
+}
+
+.btns-container div:nth-child(13) .btns {
+  left: 60px;
+  top: 28px;
+}
+
+.btns-container div:nth-child(14) .btns {
+  bottom: 30px;
+}
+
+.btns-container div:nth-child(15) .btns {
+  top: 0px;
+}
+
+.btns-container div:nth-child(16) .btns {
+  left: 20px;
+  top: 30px;
+}
+
+.btns-container div:nth-child(3) .btns,
+.btns-container div:nth-child(4) .btns,
+.btns-container div:nth-child(5) .btns,
+.btns-container div:nth-child(6) .btns,
+.btns-container div:nth-child(7) .btns,
+.btns-container div:nth-child(8) .btns,
+.btns-container div:nth-child(9) .btns,
+.btns-container div:nth-child(12) .btns,
+.btns-container div:nth-child(14) .btns,
+.btns-container div:nth-child(11) .btns {
+  animation: bounce2 0.8s linear infinite alternate-reverse;
+}
+
+.button-generic {
+  font-size: .8rem;
+  color: white !important;
+  background-color: #070A12 !important;
+  padding: 8px 16px;
+  width: 100%;
+  /* max-width: 200px; */
+  margin-inline: auto;
+}
+
+.button-generic:hover{
+  
+  background-color: #78a8df !important;
+  color: #000 !important  ;
+}
+
+.input-generic {
+  /* font-size: 1rem; */
+  padding: 6px 15px;
+
+  border: 3px solid #070A12 !important;
+  color: #070A12;
+  max-width: 200px;
+  margin-inline: auto;
+}
+
+.space-btwn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@keyframes bounce {
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes bounce2 {
+  100% {
+    bottom: 10px;
+  }
+}
+
+
